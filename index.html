@@ -150,15 +150,29 @@ async function loadNews(){
   const response=await fetch("./news.json?t="+Date.now(),{cache:"no-store"});
   if(!response.ok)throw Error("news.json उपलब्ध नाही");
   const data=await response.json();
-  if(!Array.isArray(data.items))throw Error("बातम्यांचा डेटा योग्य नाही");
-  all=data.items.filter(x=>x&&x.title).map(x=>({
-   cat:x.cat||"भारत",title:clean(x.title),link:safeLink(x.link),
-   date:x.date||"",desc:clean(x.desc||""),source:clean(x.source||"मूळ स्रोत")
+  
+if(!Array.isArray(data.news))throw Error("बातम्यांचा डेटा योग्य नाही");
+
+all=data.news.filter(x=>x&&x.title&&x.link).map(x=>({
+ cat:x.category||"भारत",
+ title:clean(x.title),
+ link:safeLink(x.link),
+ date:x.pubDate||"",
+ desc:clean(x.title),
+ source:"Google News"
+}));
+
+if(all.length){
+ try{
+  localStorage.setItem(CACHE_KEY,JSON.stringify({
+   savedAt:data.updated||new Date().toISOString(),
+   items:all
   }));
-  if(all.length){
-   try{localStorage.setItem(CACHE_KEY,JSON.stringify({savedAt:data.updated_at||new Date().toISOString(),items:all}))}catch(e){}
-   st.textContent="अपडेट: "+new Date(data.updated_at||Date.now()).toLocaleString("mr-IN")+" • "+all.length+" बातम्या";
-   loaded=true;
+ }catch(e){}
+ st.textContent="अपडेट: "+
+  new Date(data.updated||Date.now()).toLocaleString("mr-IN")+
+  " • "+all.length+" बातम्या";
+ loaded=true;
   }
  }catch(err){}
  if(!loaded){
