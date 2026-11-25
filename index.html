@@ -150,18 +150,16 @@ async function loadNews(){
   const response=await fetch("./news.json?t="+Date.now(),{cache:"no-store"});
   if(!response.ok)throw Error("news.json उपलब्ध नाही");
   const data=await response.json();
-  
-if(!Array.isArray(data.news))throw Error("बातम्यांचा डेटा योग्य नाही");
+  if(!Array.isArray(data.news))throw Error("बातम्यांचा डेटा योग्य नाही");
 
 all=data.news.filter(x=>x&&x.title&&x.link).map(x=>({
  cat:x.category||"भारत",
  title:clean(x.title),
  link:safeLink(x.link),
  date:x.pubDate||"",
- desc:clean(x.title),
+ desc:"",
  source:"Google News"
 }));
-
 if(all.length){
  try{
   localStorage.setItem(CACHE_KEY,JSON.stringify({
