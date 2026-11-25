@@ -132,10 +132,10 @@ async function getFeed(f){
  if(!items.length)throw Error("या विभागात बातम्या मिळाल्या नाहीत");
  return items;
 }
+
 async function loadNews(){
  if(loading)return;
  loading=true;
-
  const st=document.getElementById("status");
  const box=document.getElementById("newslist");
  const btn=document.querySelector('.sectionhead .btn');
@@ -150,7 +150,6 @@ async function loadNews(){
 
  try{
   const response=await fetch("./news.json?t="+Date.now());
-
   if(!response.ok)throw new Error("News file not available");
 
   const data=await response.json();
@@ -165,31 +164,25 @@ async function loadNews(){
   }));
 
   saveCache();
-
   st.textContent="अपडेट: "+new Date().toLocaleTimeString("mr-IN")+" • "+all.length+" बातम्या";
 
  }catch(error){
-  const cachedAt=restoreCache();
-
-  if(all.length){
-   st.textContent="जुन्या सेव्ह केलेल्या "+all.length+" बातम्या दाखवत आहोत.";
-  }else{
-   st.textContent="बातम्या सध्या उपलब्ध नाहीत. पुन्हा प्रयत्न करा.";
-  }
-
-  console.error("News loading error:",error);
+  restoreCache();
+  st.textContent=all.length
+   ? "आधीच्या सेव्ह केलेल्या बातम्या दाखवत आहोत."
+   : "बातम्या सध्या उपलब्ध नाहीत. पुन्हा प्रयत्न करा.";
+  console.error(error);
 
  }finally{
   render();
   loading=false;
-
   if(btn){
    btn.disabled=false;
    btn.textContent="↻ बातम्या रिफ्रेश करा";
   }
  }
 }
- 
+
 function render(){
  const q=document.getElementById("search").value.toLocaleLowerCase("mr");
  const combined=[...custom.map(x=>({...x,custom:true})),...all];
