@@ -11,7 +11,7 @@
 <meta property="og:description" content="भारत, महाराष्ट्र आणि जगातील महत्त्वाच्या बातम्या मराठीत.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#10243a">
-<link rel="canonical" href="https://example.com/">
+<link rel="canonical" href="https://worldnews24-8.github.io/">
 <style>
 :root{--navy:#10243a;--blue:#155eef;--red:#e53935;--ink:#172333;--muted:#687789;--line:#e6ebf1;--paper:#f4f6f9}
 *{box-sizing:border-box}body{margin:0;font-family:Arial,"Noto Sans Devanagari",sans-serif;background:var(--paper);color:var(--ink)}a{color:inherit;text-decoration:none}
@@ -38,11 +38,11 @@ footer{background:#091a2b;color:#dce7f3;margin-top:38px;padding:27px 5%;text-ali
 <nav><div class="navinner"><a href="#home" class="active">मुख्यपृष्ठ</a><a href="#news" onclick="pick('भारत')">भारत</a><a href="#news" onclick="pick('महाराष्ट्र')">महाराष्ट्र</a><a href="#news" onclick="pick('जग')">जग</a><a href="#news" onclick="pick('व्यापार')">व्यापार</a><a href="#news" onclick="pick('तंत्रज्ञान')">तंत्रज्ञान</a><a href="#news" onclick="pick('क्रीडा')">क्रीडा</a></div></nav>
 <main class="wrap" id="home">
 <div class="ticker"><b>ताज्या बातम्या</b><span>महत्त्वाच्या घडामोडी वाचा आणि मूळ स्रोतावरून तपशील पडताळा.</span></div>
-<div class="hero"><section class="heroMain"><div class="eyebrow">WORLD NEWS 24 • मराठी</div><h1>जगात काय घडतंय? जाणून घ्या, एका ठिकाणी.</h1><p>भारत, महाराष्ट्र आणि जगातील महत्त्वाच्या बातम्या मराठीत. ताज्या अपडेट्ससाठी बातम्या रिफ्रेश करा.</p></section><div class="side"><div class="mini"><div class="cat">आजचे अपडेट</div><strong>नवीन बातम्या RSS फीडमधून मिळवा.</strong><span class="muted">बातम्यांचे मूळ प्रकाशन आणि वेळ तपासा.</span></div><div class="mini"><div class="cat">वाचकांसाठी सूचना</div><strong>अफवा आणि अपुष्ट माहिती शेअर करू नका.</strong><span class="muted">महत्त्वाच्या निर्णयांसाठी अधिकृत स्रोत वापरा.</span></div></div></div>
+<div class="hero"><section class="heroMain"><div class="eyebrow">WORLD NEWS 24 • मराठी</div><h1>जगात काय घडतंय? जाणून घ्या, एका ठिकाणी.</h1><p>भारत, महाराष्ट्र आणि जगातील महत्त्वाच्या बातम्या मराठीत. ताज्या अपडेट्ससाठी बातम्या रिफ्रेश करा.</p></section><div class="side"><div class="mini"><div class="cat">आजचे अपडेट</div><strong>भारत, महाराष्ट्र आणि जगातील बातम्या आपोआप मिळवा.</strong><span class="muted">बातमीची वेळ आणि मूळ स्रोत तपासा.</span></div><div class="mini"><div class="cat">वाचकांसाठी सूचना</div><strong>अफवा आणि अपुष्ट माहिती शेअर करू नका.</strong><span class="muted">महत्त्वाच्या निर्णयांसाठी अधिकृत स्रोत वापरा.</span></div></div></div>
 <div class="adslot">जाहिरात जागा • AdSense मंजुरीनंतर येथे जाहिरात कोड जोडा</div>
 <div class="sectionhead" id="news"><h2>आजच्या ताज्या बातम्या</h2><button class="btn" onclick="loadNews()">↻ बातम्या रिफ्रेश करा</button></div>
 <div class="filters"><button class="chip selected" onclick="pick('सर्व',this)">सर्व</button><button class="chip" onclick="pick('भारत',this)">भारत</button><button class="chip" onclick="pick('महाराष्ट्र',this)">महाराष्ट्र</button><button class="chip" onclick="pick('जग',this)">जग</button><button class="chip" onclick="pick('व्यापार',this)">व्यापार</button><button class="chip" onclick="pick('तंत्रज्ञान',this)">तंत्रज्ञान</button><button class="chip" onclick="pick('क्रीडा',this)">क्रीडा</button></div>
-<div class="status" id="status">बातम्या लोड होत आहेत...</div><section class="grid" id="newslist"><div class="empty">लोड होत आहे...</div></section>
+<div class="status" id="status">बातम्या लोड होत आहेत...</div><div class="muted" style="margin:-5px 0 12px">स्वयंचलित अपडेट: दर 15 मिनिटांनी • आवश्यक असल्यास रिफ्रेश करा.</div><section class="grid" id="newslist"><div class="empty">लोड होत आहे...</div></section>
 <div class="adslot">जाहिरात जागा • जाहिरातदार / AdSense साठी राखीव</div>
 <section class="admin panel"><details><summary>Admin Panel — स्वतःची बातमी पोस्ट करा</summary><p class="muted">ही डेमो आवृत्ती आहे. पोस्ट केलेल्या बातम्या या ब्राउझरमध्येच सेव्ह होतात; सर्व्हरवर प्रकाशित होत नाहीत.</p>
 <form id="postForm"><input id="postTitle" required maxlength="180" placeholder="बातमीचे शीर्षक"><select id="postCat"><option>भारत</option><option>महाराष्ट्र</option><option>जग</option><option>व्यापार</option><option>तंत्रज्ञान</option><option>क्रीडा</option></select><textarea id="postDesc" placeholder="बातमीचा संक्षिप्त मजकूर"></textarea><input id="postUrl" type="url" placeholder="मूळ बातमीची लिंक (ऐच्छिक)"><button class="btn dark" type="submit">बातमी सेव्ह करा</button></form><div id="adminList" class="adminlist"></div></details></section>
@@ -50,22 +50,144 @@ footer{background:#091a2b;color:#dce7f3;margin-top:38px;padding:27px 5%;text-ali
 </main>
 <footer>© 2026 World News 24 • मराठी न्यूज पोर्टल<br>संपर्क: तुमचा अधिकृत ईमेल येथे जोडा • Privacy Policy • About Us</footer>
 <script>
-const feeds=[{cat:"भारत",q:"India news when:1d"},{cat:"महाराष्ट्र",q:"Maharashtra news when:1d"},{cat:"जग",q:"World news when:1d"},{cat:"व्यापार",q:"India business economy markets when:1d"},{cat:"तंत्रज्ञान",q:"technology science AI news when:1d"},{cat:"क्रीडा",q:"India sports news when:1d"}];
-let all=[],current="सर्व",custom=[];
-try{custom=JSON.parse(localStorage.getItem("wn24posts")||"[]")}catch(e){custom=[]}
+const feeds=[
+ {cat:"भारत",q:"India national news when:1d"},
+ {cat:"महाराष्ट्र",q:"Maharashtra Marathi news when:1d"},
+ {cat:"जग",q:"World international news when:1d"},
+ {cat:"व्यापार",q:"India business economy markets when:1d"},
+ {cat:"तंत्रज्ञान",q:"technology science artificial intelligence news when:1d"},
+ {cat:"क्रीडा",q:"India sports cricket news when:1d"}
+];
+const CACHE_KEY="wn24_rss_cache_v2";
+let all=[],current="सर्व",custom=[],loading=false;
+try{custom=JSON.parse(localStorage.getItem("wn24posts")||"[]");if(!Array.isArray(custom))custom=[]}catch(e){custom=[]}
 document.getElementById("today").textContent=new Intl.DateTimeFormat("mr-IN",{dateStyle:"full"}).format(new Date());
-function pick(cat,el){current=cat;document.querySelectorAll(".chip").forEach(x=>x.classList.remove("selected"));if(el)el.classList.add("selected");render()}
-function clean(s){const d=document.createElement("div");d.innerHTML=s||"";return(d.textContent||"").trim()}
-function esc(s){return String(s||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
-async function loadNews(){const st=document.getElementById("status"),box=document.getElementById("newslist");st.textContent="ताज्या बातम्या आणत आहोत...";box.innerHTML='<div class="empty">कृपया थांबा...</div>';all=[];
-const rs=await Promise.allSettled(feeds.map(async f=>{const rss="https://news.google.com/rss/search?q="+encodeURIComponent(f.q)+"&hl=mr&gl=IN&ceid=IN:mr";const api="https://api.rss2json.com/v1/api.json?rss_url="+encodeURIComponent(rss);const r=await fetch(api);if(!r.ok)throw Error();const d=await r.json();(d.items||[]).forEach(i=>all.push({cat:f.cat,title:clean(i.title),link:i.link,date:i.pubDate,source:clean(i.author||"Google News")}))}));
-const ok=rs.filter(x=>x.status==="fulfilled").length;st.textContent=ok?"अपडेट: "+new Date().toLocaleTimeString("mr-IN")+" • "+all.length+" बाह्य बातम्या":"बाह्य RSS फीड सध्या उपलब्ध नाही. पुन्हा प्रयत्न करा.";render()}
-function render(){const q=document.getElementById("search").value.toLocaleLowerCase("mr");const combined=[...custom.map(x=>({...x,custom:true})),...all];const items=combined.filter(x=>(current==="सर्व"||x.cat===current)&&(!q||x.title.toLocaleLowerCase("mr").includes(q)));const box=document.getElementById("newslist");if(!items.length){box.innerHTML='<div class="empty">या विभागात बातम्या उपलब्ध नाहीत. रिफ्रेश करून पाहा.</div>';return}
-box.innerHTML=items.map(x=>'<article class="card"><div class="cat">'+esc(x.cat)+(x.custom?' • संपादकीय पोस्ट':'')+'</div><a href="'+(x.link?esc(x.link):'#')+'" '+(x.link?'target="_blank" rel="noopener noreferrer"':'')+'><h3>'+esc(x.title)+'</h3></a>'+(x.desc?'<p class="muted">'+esc(x.desc)+'</p>':'')+'<div class="meta">'+esc(x.source||"World News 24")+" • "+(x.date?new Date(x.date).toLocaleString("mr-IN"):"स्वतःची पोस्ट")+'</div></article>').join("")}
+
+function pick(cat,el){
+ current=cat;
+ document.querySelectorAll(".chip").forEach(x=>x.classList.remove("selected"));
+ if(el)el.classList.add("selected");
+ render();
+}
+function clean(s){
+ const d=document.createElement("div");d.innerHTML=s||"";
+ return(d.textContent||"").trim();
+}
+function esc(s){
+ return String(s||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+function safeLink(value){
+ try{const u=new URL(value);return u.protocol==="https:"?u.href:""}catch(e){return ""}
+}
+function saveCache(){
+ try{localStorage.setItem(CACHE_KEY,JSON.stringify({savedAt:new Date().toISOString(),items:all}))}catch(e){}
+}
+function restoreCache(){
+ try{
+  const c=JSON.parse(localStorage.getItem(CACHE_KEY)||"null");
+  if(c&&Array.isArray(c.items)){all=c.items;return c.savedAt||""}
+ }catch(e){}
+ return "";
+}
+function parseXml(xml,cat){
+ const doc=new DOMParser().parseFromString(xml,"text/xml");
+ if(doc.querySelector("parsererror"))throw Error("RSS XML वाचता आले नाही");
+ return [...doc.querySelectorAll("item")].map(item=>{
+  const title=clean(item.querySelector("title")?.textContent||"");
+  const link=safeLink(item.querySelector("link")?.textContent||item.querySelector("guid")?.textContent||"");
+  const date=item.querySelector("pubDate")?.textContent||"";
+  const desc=clean(item.querySelector("description")?.textContent||"");
+  const source=clean(item.querySelector("source")?.textContent||"Google News");
+  return {cat,title,link,date,desc,source};
+ }).filter(x=>x.title&&x.link);
+}
+async function fetchTimed(url,ms=12000){
+ const controller=new AbortController();
+ const timer=setTimeout(()=>controller.abort(),ms);
+ try{return await fetch(url,{signal:controller.signal,cache:"no-store"})}
+ finally{clearTimeout(timer)}
+}
+async function getFeed(f){
+ const rss="https://news.google.com/rss/search?q="+encodeURIComponent(f.q)+"&hl=mr&gl=IN&ceid=IN:mr";
+ // Try the JSON RSS service first; if unavailable, use a raw-feed proxy.
+ try{
+  const api="https://api.rss2json.com/v1/api.json?rss_url="+encodeURIComponent(rss);
+  const r=await fetchTimed(api);
+  if(!r.ok)throw Error("RSS JSON सेवा प्रतिसाद देत नाही");
+  const d=await r.json();
+  if(d.status==="ok"&&Array.isArray(d.items)){
+   const items=d.items.map(i=>({
+    cat:f.cat,title:clean(i.title),link:safeLink(i.link),
+    date:i.pubDate||"",desc:clean(i.description||""),
+    source:clean(i.author||"Google News")
+   })).filter(x=>x.title&&x.link);
+   if(items.length)return items;
+  }
+ }catch(e){}
+ const proxy="https://api.allorigins.win/raw?url="+encodeURIComponent(rss);
+ const r2=await fetchTimed(proxy);
+ if(!r2.ok)throw Error("RSS स्रोत सध्या उपलब्ध नाही");
+ const xml=await r2.text();
+ const items=parseXml(xml,f.cat);
+ if(!items.length)throw Error("या विभागात बातम्या मिळाल्या नाहीत");
+ return items;
+}
+async function loadNews(){
+ if(loading)return;
+ loading=true;
+ const st=document.getElementById("status"),box=document.getElementById("newslist");
+ const btn=document.querySelector('.sectionhead .btn');
+ if(btn){btn.disabled=true;btn.textContent="बातम्या आणत आहोत..."}
+ st.textContent="ताज्या बातम्या आणत आहोत...";
+ if(!all.length)box.innerHTML='<div class="empty">कृपया थांबा...</div>';
+ const results=await Promise.allSettled(feeds.map(getFeed));
+ const fresh=results.filter(x=>x.status==="fulfilled").flatMap(x=>x.value);
+ const ok=results.filter(x=>x.status==="fulfilled").length;
+ if(fresh.length){
+  const seen=new Set();
+  all=fresh.filter(x=>{const k=x.link||x.title;if(seen.has(k))return false;seen.add(k);return true;});
+  saveCache();
+  st.textContent="अपडेट: "+new Date().toLocaleTimeString("mr-IN")+" • "+all.length+" बातम्या • "+ok+"/"+feeds.length+" विभाग उपलब्ध";
+ }else{
+  const cachedAt=restoreCache();
+  if(all.length){
+   st.textContent="सध्या नवीन फीड उपलब्ध नाही. आधीच्या सेव्ह केलेल्या "+all.length+" बातम्या दाखवत आहोत"+(cachedAt?" • शेवटचे अपडेट: "+new Date(cachedAt).toLocaleString("mr-IN"):"")+".";
+  }else{
+   st.textContent="RSS सेवा सध्या प्रतिसाद देत नाही. इंटरनेट तपासा किंवा थोड्या वेळाने पुन्हा प्रयत्न करा.";
+  }
+ }
+ render();
+ loading=false;
+ if(btn){btn.disabled=false;btn.textContent="↻ बातम्या रिफ्रेश करा"}
+}
+function render(){
+ const q=document.getElementById("search").value.toLocaleLowerCase("mr");
+ const combined=[...custom.map(x=>({...x,custom:true})),...all];
+ const items=combined.filter(x=>(current==="सर्व"||x.cat===current)&&(!q||x.title.toLocaleLowerCase("mr").includes(q)));
+ const box=document.getElementById("newslist");
+ if(!items.length){box.innerHTML='<div class="empty">या विभागात बातम्या उपलब्ध नाहीत. रिफ्रेश करून पाहा.</div>';return}
+ box.innerHTML=items.map(x=>{
+  const link=safeLink(x.link);
+  const date=x.date&& !Number.isNaN(new Date(x.date).getTime())?new Date(x.date).toLocaleString("mr-IN"):"वेळ उपलब्ध नाही";
+  return '<article class="card"><div class="cat">'+esc(x.cat)+(x.custom?' • संपादकीय पोस्ट':'')+'</div><a href="'+(link||'#')+'" '+(link?'target="_blank" rel="noopener noreferrer"':'')+'><h3>'+esc(x.title)+'</h3></a>'+(x.desc?'<p class="muted">'+esc(x.desc.slice(0,260))+'</p>':'')+'<div class="meta">'+esc(x.source||"मूळ स्रोत")+" • "+esc(date)+'</div></article>';
+ }).join("");
+}
 document.getElementById("search").addEventListener("input",render);
-document.getElementById("postForm").addEventListener("submit",e=>{e.preventDefault();custom.unshift({cat:document.getElementById("postCat").value,title:document.getElementById("postTitle").value.trim(),desc:document.getElementById("postDesc").value.trim(),link:document.getElementById("postUrl").value.trim(),date:new Date().toISOString(),source:"World News 24"});localStorage.setItem("wn24posts",JSON.stringify(custom));e.target.reset();render();showAdmin()});
-function showAdmin(){const el=document.getElementById("adminList");el.innerHTML=custom.map((x,i)=>'<div class="adminitem"><span>'+esc(x.title)+'</span><button class="btn red" onclick="removePost('+i+')">हटवा</button></div>').join("")}
-function removePost(i){custom.splice(i,1);localStorage.setItem("wn24posts",JSON.stringify(custom));render();showAdmin()}
-showAdmin();loadNews();
+document.getElementById("postForm").addEventListener("submit",e=>{
+ e.preventDefault();
+ custom.unshift({cat:document.getElementById("postCat").value,title:document.getElementById("postTitle").value.trim(),desc:document.getElementById("postDesc").value.trim(),link:safeLink(document.getElementById("postUrl").value.trim()),date:new Date().toISOString(),source:"World News 24"});
+ try{localStorage.setItem("wn24posts",JSON.stringify(custom))}catch(e){}
+ e.target.reset();render();showAdmin();
+});
+function showAdmin(){
+ const el=document.getElementById("adminList");
+ el.innerHTML=custom.map((x,i)=>'<div class="adminitem"><span>'+esc(x.title)+'</span><button class="btn red" onclick="removePost('+i+')">हटवा</button></div>').join("");
+}
+function removePost(i){custom.splice(i,1);try{localStorage.setItem("wn24posts",JSON.stringify(custom))}catch(e){}render();showAdmin()}
+showAdmin();
+restoreCache();
+loadNews();
+// Automatic refresh while the page is open. A static GitHub Pages site does not run background jobs when nobody visits.
+setInterval(loadNews,15*60*1000);
 </script>
 </body></html>
