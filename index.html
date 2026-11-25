@@ -135,31 +135,61 @@ async function getFeed(f){
 async function loadNews(){
  if(loading)return;
  loading=true;
- const st=document.getElementById("status"),box=document.getElementById("newslist");
+
+ const st=document.getElementById("status");
+ const box=document.getElementById("newslist");
  const btn=document.querySelector('.sectionhead .btn');
- if(btn){btn.disabled=true;btn.textContent="बातम्या आणत आहोत..."}
+
+ if(btn){
+  btn.disabled=true;
+  btn.textContent="बातम्या आणत आहोत...";
+ }
+
  st.textContent="ताज्या बातम्या आणत आहोत...";
- if(!all.length)box.innerHTML='<div class="empty">कृपया थांबा...</div>';
- const results=await Promise.allSettled(feeds.map(getFeed));
- const fresh=results.filter(x=>x.status==="fulfilled").flatMap(x=>x.value);
- const ok=results.filter(x=>x.status==="fulfilled").length;
- if(fresh.length){
-  const seen=new Set();
-  all=fresh.filter(x=>{const k=x.link||x.title;if(seen.has(k))return false;seen.add(k);return true;});
+ box.innerHTML='<div class="empty">कृपया थांबा...</div>';
+
+ try{
+  const response=await fetch("./news.json?t="+Date.now());
+
+  if(!response.ok)throw new Error("News file not available");
+
+  const data=await response.json();
+
+  all=(data.news||[]).map(item=>({
+   cat:item.category||"इतर",
+   title:item.title||"",
+   link:item.link||"",
+   desc:item.description||"",
+   date:item.pubDate||"",
+   source:"Google News"
+  }));
+
   saveCache();
-  st.textContent="अपडेट: "+new Date().toLocaleTimeString("mr-IN")+" • "+all.length+" बातम्या • "+ok+"/"+feeds.length+" विभाग उपलब्ध";
- }else{
+
+  st.textContent="अपडेट: "+new Date().toLocaleTimeString("mr-IN")+" • "+all.length+" बातम्या";
+
+ }catch(error){
   const cachedAt=restoreCache();
+
   if(all.length){
-   st.textContent="सध्या नवीन फीड उपलब्ध नाही. आधीच्या सेव्ह केलेल्या "+all.length+" बातम्या दाखवत आहोत"+(cachedAt?" • शेवटचे अपडेट: "+new Date(cachedAt).toLocaleString("mr-IN"):"")+".";
+   st.textContent="जुन्या सेव्ह केलेल्या "+all.length+" बातम्या दाखवत आहोत.";
   }else{
-   st.textContent="RSS सेवा सध्या प्रतिसाद देत नाही. इंटरनेट तपासा किंवा थोड्या वेळाने पुन्हा प्रयत्न करा.";
+   st.textContent="बातम्या सध्या उपलब्ध नाहीत. पुन्हा प्रयत्न करा.";
+  }
+
+  console.error("News loading error:",error);
+
+ }finally{
+  render();
+  loading=false;
+
+  if(btn){
+   btn.disabled=false;
+   btn.textContent="↻ बातम्या रिफ्रेश करा";
   }
  }
- render();
- loading=false;
- if(btn){btn.disabled=false;btn.textContent="↻ बातम्या रिफ्रेश करा"}
 }
+ 
 function render(){
  const q=document.getElementById("search").value.toLocaleLowerCase("mr");
  const combined=[...custom.map(x=>({...x,custom:true})),...all];
