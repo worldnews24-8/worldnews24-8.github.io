@@ -7,6 +7,7 @@
 <meta name="description" content="World News 24 वर भारत, महाराष्ट्र आणि जगातील ताज्या बातम्या मराठीत वाचा. व्यापार, तंत्रज्ञान, क्रीडा आणि महत्त्वाच्या घडामोडी.">
 <meta name="keywords" content="Marathi news, Maharashtra news, India news, World News 24, ताज्या बातम्या, मराठी बातम्या">
 <meta name="robots" content="index, follow">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta property="og:title" content="World News 24 | मराठी बातम्या">
 <meta property="og:description" content="भारत, महाराष्ट्र आणि जगातील महत्त्वाच्या बातम्या मराठीत.">
 <meta property="og:type" content="website">
@@ -27,7 +28,7 @@ nav{background:var(--navy);color:#fff;overflow:auto}nav .navinner{max-width:1180
 .sectionhead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:25px 0 13px}.sectionhead h2{font-size:21px;margin:0}
 .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:13px}.chip{border:1px solid var(--line);background:white;color:#435268;border-radius:22px;padding:8px 13px}.chip.selected{background:var(--navy);color:white}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.card{display:flex;flex-direction:column;min-height:155px}.card h3{font-size:16px;line-height:1.55;margin:8px 0}.card a:hover h3{color:var(--blue)}.meta{margin-top:auto;padding-top:12px}.status{font-size:12px;color:var(--muted);margin:10px 0}.empty{grid-column:1/-1;background:white;border:1px dashed #cbd5e1;padding:25px;text-align:center;border-radius:10px;color:var(--muted)}
-.admin{margin-top:32px}.admin summary{font-weight:800;cursor:pointer;padding:4px 0}.admin form{display:grid;gap:10px;margin-top:14px}.admin input,.admin textarea,.admin select{width:100%;padding:11px;border:1px solid var(--line);border-radius:8px;font:inherit}.admin textarea{min-height:85px}.adminlist{display:grid;gap:8px;margin-top:12px}.adminitem{background:#f7f9fc;padding:10px;border-radius:8px;display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:13px}
+
 footer{background:#091a2b;color:#dce7f3;margin-top:38px;padding:27px 5%;text-align:center;font-size:13px;line-height:1.8}
 @media(max-width:760px){.head{align-items:flex-start;flex-direction:column}.search{width:100%}.search input{flex:1;width:100%}.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.heroMain{min-height:215px}}
 </style>
@@ -35,20 +36,25 @@ footer{background:#091a2b;color:#dce7f3;margin-top:38px;padding:27px 5%;text-ali
 <body>
 <div class="top"><span>विश्वसनीय माहिती • मराठी बातम्या • भारत आणि जग</span><span id="today"></span></div>
 <header><div class="head"><div><div class="brand">WORLD <span>NEWS</span> 24</div><div class="tag">भारतापासून जगापर्यंत — प्रत्येक महत्त्वाची बातमी</div></div><div class="search"><input id="search" placeholder="बातमी शोधा..." aria-label="बातमी शोधा"><button class="btn" onclick="render()">शोधा</button></div></div></header>
-<nav><div class="navinner"><a href="#home" class="active">मुख्यपृष्ठ</a><a href="#news" onclick="pick('भारत')">भारत</a><a href="#news" onclick="pick('महाराष्ट्र')">महाराष्ट्र</a><a href="#news" onclick="pick('जग')">जग</a><a href="#news" onclick="pick('व्यापार')">व्यापार</a><a href="#news" onclick="pick('तंत्रज्ञान')">तंत्रज्ञान</a><a href="#news" onclick="pick('क्रीडा')">क्रीडा</a></div></nav>
+<nav><div class="navinner"><a href="#home" class="active">मुख्यपृष्ठ</a><a href="#news" onclick="pick('भारत')">भारत</a><a href="#news" onclick="pick('महाराष्ट्र')">महाराष्ट्र</a><a href="#news" onclick="pick('जग')">जग</a><a href="#news" onclick="pick('व्यापार')">व्यापार</a><a href="#news" onclick="pick('तंत्रज्ञान')">तंत्रज्ञान</a><a href="#news" onclick="pick('क्रीडा')">क्रीडा</a><a href="#about">आमच्याबद्दल</a><a href="#editorial">संपादकीय धोरण</a><a href="#privacy">गोपनीयता</a><a href="#contact">संपर्क</a></div></nav>
 <main class="wrap" id="home">
 <div class="ticker"><b>ताज्या बातम्या</b><span>महत्त्वाच्या घडामोडी वाचा आणि मूळ स्रोतावरून तपशील पडताळा.</span></div>
-<div class="hero"><section class="heroMain"><div class="eyebrow">WORLD NEWS 24 • मराठी</div><h1>जगात काय घडतंय? जाणून घ्या, एका ठिकाणी.</h1><p>भारत, महाराष्ट्र आणि जगातील महत्त्वाच्या बातम्या मराठीत. ताज्या अपडेट्ससाठी बातम्या रिफ्रेश करा.</p></section><div class="side"><div class="mini"><div class="cat">आजचे अपडेट</div><strong>भारत, महाराष्ट्र आणि जगातील बातम्या आपोआप मिळवा.</strong><span class="muted">बातमीची वेळ आणि मूळ स्रोत तपासा.</span></div><div class="mini"><div class="cat">वाचकांसाठी सूचना</div><strong>अफवा आणि अपुष्ट माहिती शेअर करू नका.</strong><span class="muted">महत्त्वाच्या निर्णयांसाठी अधिकृत स्रोत वापरा.</span></div></div></div>
+<div class="hero"><section class="heroMain"><div class="eyebrow">WORLD NEWS 24 • मराठी</div><h1>जगात काय घडतंय? जाणून घ्या, एका ठिकाणी.</h1><p>भारत, महाराष्ट्र आणि जगातील महत्त्वाच्या घडामोडी मराठीत. प्रत्येक बातमीचा मूळ स्रोत तपासा.</p></section><div class="side"><div class="mini"><div class="cat">आजचे अपडेट</div><strong>भारत, महाराष्ट्र आणि जगातील बातम्या आपोआप मिळवा.</strong><span class="muted">बातमीची वेळ आणि मूळ स्रोत तपासा.</span></div><div class="mini"><div class="cat">वाचकांसाठी सूचना</div><strong>अफवा आणि अपुष्ट माहिती शेअर करू नका.</strong><span class="muted">महत्त्वाच्या निर्णयांसाठी अधिकृत स्रोत वापरा.</span></div></div></div>
 <div class="adslot">जाहिरात जागा • AdSense मंजुरीनंतर येथे जाहिरात कोड जोडा</div>
 <div class="sectionhead" id="news"><h2>आजच्या ताज्या बातम्या</h2><button class="btn" onclick="loadNews()">↻ बातम्या रिफ्रेश करा</button></div>
 <div class="filters"><button class="chip selected" onclick="pick('सर्व',this)">सर्व</button><button class="chip" onclick="pick('भारत',this)">भारत</button><button class="chip" onclick="pick('महाराष्ट्र',this)">महाराष्ट्र</button><button class="chip" onclick="pick('जग',this)">जग</button><button class="chip" onclick="pick('व्यापार',this)">व्यापार</button><button class="chip" onclick="pick('तंत्रज्ञान',this)">तंत्रज्ञान</button><button class="chip" onclick="pick('क्रीडा',this)">क्रीडा</button></div>
-<div class="status" id="status">बातम्या लोड होत आहेत...</div><div class="muted" style="margin:-5px 0 12px">स्वयंचलित अपडेट: दर 15 मिनिटांनी • आवश्यक असल्यास रिफ्रेश करा.</div><section class="grid" id="newslist"><div class="empty">लोड होत आहे...</div></section>
+<div class="status" id="status">बातम्या लोड होत आहेत...</div><p class="muted">टीप: खालील बाह्य बातम्या संबंधित प्रकाशकांच्या RSS फीडमधून दाखवल्या जातात. संपूर्ण वृत्त आणि अधिक संदर्भासाठी मूळ स्रोताची लिंक उघडा. World News 24 ची स्वतंत्र संपादकीय सामग्री स्पष्टपणे वेगळी दर्शवली जाईल.</p><div class="muted" style="margin:-5px 0 12px">पेज उघडे असताना साधारण दर 15 मिनिटांनी बातम्या तपासल्या जातात. पेज बंद असताना येथे स्वतंत्र बॅकग्राउंड अपडेट चालत नाही.</div><section class="grid" id="newslist"><div class="empty">लोड होत आहे...</div></section>
 <div class="adslot">जाहिरात जागा • जाहिरातदार / AdSense साठी राखीव</div>
-<section class="admin panel"><details><summary>Admin Panel — स्वतःची बातमी पोस्ट करा</summary><p class="muted">ही डेमो आवृत्ती आहे. पोस्ट केलेल्या बातम्या या ब्राउझरमध्येच सेव्ह होतात; सर्व्हरवर प्रकाशित होत नाहीत.</p>
-<form id="postForm"><input id="postTitle" required maxlength="180" placeholder="बातमीचे शीर्षक"><select id="postCat"><option>भारत</option><option>महाराष्ट्र</option><option>जग</option><option>व्यापार</option><option>तंत्रज्ञान</option><option>क्रीडा</option></select><textarea id="postDesc" placeholder="बातमीचा संक्षिप्त मजकूर"></textarea><input id="postUrl" type="url" placeholder="मूळ बातमीची लिंक (ऐच्छिक)"><button class="btn dark" type="submit">बातमी सेव्ह करा</button></form><div id="adminList" class="adminlist"></div></details></section>
-<div class="sectionhead"><h2>आमच्याबद्दल</h2></div><div class="mini">World News 24 हे मराठी बातम्यांसाठी तयार केलेले न्यूज पोर्टल टेम्पलेट आहे. प्रकाशित करण्यापूर्वी संपादकीय धोरण, संपर्क माहिती, गोपनीयता धोरण आणि कायदेशीर सूचना जोडा.</div>
+<section id="about" class="sectionhead"><h2>आमच्याबद्दल</h2></section>
+<div class="mini"><p><strong>World News 24</strong> हे भारत, महाराष्ट्र आणि जगातील महत्त्वाच्या घडामोडी मराठी भाषेत वाचकांपर्यंत पोहोचवण्याच्या उद्देशाने तयार केलेले डिजिटल न्यूज पोर्टल आहे.</p><p>आमचे उद्दिष्ट म्हणजे बातम्यांचा संदर्भ, प्रकाशनाची वेळ आणि उपलब्ध मूळ स्रोत स्पष्टपणे देणे. येथे दिसणाऱ्या बाह्य स्रोतांवरील मथळ्यांसाठी संबंधित प्रकाशकाच्या मूळ लेखाची लिंक दिली जाते. आमचे संपादकीय लेख किंवा विश्लेषण असल्यास ते स्वतंत्रपणे ओळखण्याजोगे ठेवले जाईल.</p></div>
+<section id="editorial" class="sectionhead"><h2>संपादकीय धोरण</h2></section>
+<div class="mini"><p><strong>तथ्य पडताळणी:</strong> महत्त्वाच्या दाव्यांसाठी शक्यतो अधिकृत निवेदने, सरकारी संकेतस्थळे, मूळ कागदपत्रे किंवा एकापेक्षा अधिक विश्वासार्ह स्रोत तपासले जातील.</p><p><strong>स्रोत आणि श्रेय:</strong> बाह्य बातमीचा मूळ स्रोत आणि उपलब्ध असल्यास प्रकाशनाची वेळ दाखवली जाईल. दुसऱ्या प्रकाशकाचा पूर्ण लेख, फोटो किंवा व्हिडिओ परवानगीशिवाय कॉपी केला जाणार नाही.</p><p><strong>दुरुस्ती:</strong> एखादी तथ्यात्मक चूक आढळल्यास ती तपासून दुरुस्त केली जाईल. गंभीर दुरुस्तीबाबत वाचकांनी संपर्क पानावरून कळवावे.</p><p><strong>अपुष्ट माहिती:</strong> पुष्टी न झालेल्या दाव्यांना निश्चित तथ्य म्हणून मांडले जाणार नाही. अफवा किंवा दिशाभूल करणारी माहिती टाळली जाईल.</p></div>
+<section id="privacy" class="sectionhead"><h2>गोपनीयता धोरण</h2></section>
+<div class="mini"><p>World News 24 वाचकांची गोपनीयता महत्त्वाची मानते. या वेबसाइटवर बातम्या वाचताना आम्हाला तुम्ही थेट दिलेली माहिती (उदा. ईमेलद्वारे पाठवलेला संदेश) प्राप्त होऊ शकते.</p><p>वेबसाइटचे मूलभूत कार्य आणि सुरक्षितता राखण्यासाठी होस्टिंग किंवा तांत्रिक सेवा पुरवठादारांकडून सर्व्हर लॉग किंवा तांत्रिक माहिती प्रक्रिया केली जाऊ शकते. ही माहिती कोणत्या स्वरूपात साठवली जाते हे संबंधित सेवा पुरवठादारांच्या धोरणांवर अवलंबून असते.</p><p>भविष्यात Google AdSense किंवा इतर जाहिरात सेवा सुरू केल्यास, त्या सेवा जाहिराती दाखवण्यासाठी कुकीज किंवा तत्सम तंत्रज्ञान वापरू शकतात. जाहिरात सेवा सुरू करण्यापूर्वी त्यांच्या सध्याच्या नियमांनुसार या धोरणात आवश्यक माहिती अद्ययावत केली जाईल. Google च्या गोपनीयता व जाहिरात धोरणांची माहिती त्यांच्या अधिकृत संकेतस्थळावर उपलब्ध आहे.</p><p>या धोरणाबाबत प्रश्न असल्यास खालील संपर्क पत्त्यावर संदेश पाठवा. हे धोरण प्रकाशित करण्यापूर्वी वेबसाइटवर प्रत्यक्ष वापरल्या जाणाऱ्या analytics, cookies, forms आणि जाहिरात सेवांनुसार तपासून अद्ययावत करणे आवश्यक आहे.</p><p><strong>शेवटचे अद्यतन:</strong> 25 नोव्हेंबर 2026</p></div>
+<section id="contact" class="sectionhead"><h2>संपर्क</h2></section>
+<div class="mini"><p>बातमीतील तथ्यात्मक चूक, दुरुस्तीची विनंती, अभिप्राय किंवा संपादकीय चौकशीसाठी ईमेल करा:</p><p><strong><a href="mailto:lokhindnews3@gmail.com">lokhindnews3@gmail.com</a></strong></p><p class="muted">संपादकीय दुरुस्ती, अभिप्राय आणि चौकशीसाठी वरील ईमेलवर संपर्क साधा.</p></div>
 </main>
-<footer>© 2026 World News 24 • मराठी न्यूज पोर्टल<br>संपर्क: तुमचा अधिकृत ईमेल येथे जोडा • Privacy Policy • About Us</footer>
+<footer>© 2026 World News 24 • मराठी न्यूज पोर्टल<br><a href="#about">आमच्याबद्दल</a> • <a href="#editorial">संपादकीय धोरण</a> • <a href="#privacy">गोपनीयता धोरण</a> • <a href="#contact">संपर्क</a><br><span>बाह्य बातम्यांचे हक्क संबंधित प्रकाशकांकडे आहेत. कृपया मूळ स्रोत तपासा.</span></footer>
 <script>
 const feeds=[
  {cat:"भारत",q:"India national news when:1d"},
@@ -59,8 +65,7 @@ const feeds=[
  {cat:"क्रीडा",q:"India sports cricket news when:1d"}
 ];
 const CACHE_KEY="wn24_rss_cache_v2";
-let all=[],current="सर्व",custom=[],loading=false;
-try{custom=JSON.parse(localStorage.getItem("wn24posts")||"[]");if(!Array.isArray(custom))custom=[]}catch(e){custom=[]}
+let all=[],current="सर्व",loading=false;
 document.getElementById("today").textContent=new Intl.DateTimeFormat("mr-IN",{dateStyle:"full"}).format(new Date());
 
 function pick(cat,el){
@@ -132,82 +137,69 @@ async function getFeed(f){
  if(!items.length)throw Error("या विभागात बातम्या मिळाल्या नाहीत");
  return items;
 }
-
 async function loadNews(){
  if(loading)return;
  loading=true;
- const st=document.getElementById("status");
- const box=document.getElementById("newslist");
+ const st=document.getElementById("status"),box=document.getElementById("newslist");
  const btn=document.querySelector('.sectionhead .btn');
-
- if(btn){
-  btn.disabled=true;
-  btn.textContent="बातम्या आणत आहोत...";
- }
-
+ if(btn){btn.disabled=true;btn.textContent="बातम्या आणत आहोत..."}
  st.textContent="ताज्या बातम्या आणत आहोत...";
- box.innerHTML='<div class="empty">कृपया थांबा...</div>';
-
+ if(!all.length)box.innerHTML='<div class="empty">कृपया थांबा...</div>';
+ let loaded=false;
  try{
-  const response=await fetch("./news.json?t="+Date.now());
-  if(!response.ok)throw new Error("News file not available");
-
+  const response=await fetch("./news.json?t="+Date.now(),{cache:"no-store"});
+  if(!response.ok)throw Error("news.json उपलब्ध नाही");
   const data=await response.json();
-
-  all=(data.news||[]).map(item=>({
-   cat:item.category||"इतर",
-   title:item.title||"",
-   link:item.link||"",
-   desc:item.description||"",
-   date:item.pubDate||"",
-   source:"Google News"
+  if(!Array.isArray(data.items))throw Error("बातम्यांचा डेटा योग्य नाही");
+  all=data.items.filter(x=>x&&x.title).map(x=>({
+   cat:x.cat||"भारत",title:clean(x.title),link:safeLink(x.link),
+   date:x.date||"",desc:clean(x.desc||""),source:clean(x.source||"मूळ स्रोत")
   }));
-
-  saveCache();
-  st.textContent="अपडेट: "+new Date().toLocaleTimeString("mr-IN")+" • "+all.length+" बातम्या";
-
- }catch(error){
-  restoreCache();
-  st.textContent=all.length
-   ? "आधीच्या सेव्ह केलेल्या बातम्या दाखवत आहोत."
-   : "बातम्या सध्या उपलब्ध नाहीत. पुन्हा प्रयत्न करा.";
-  console.error(error);
-
- }finally{
-  render();
-  loading=false;
-  if(btn){
-   btn.disabled=false;
-   btn.textContent="↻ बातम्या रिफ्रेश करा";
+  if(all.length){
+   try{localStorage.setItem(CACHE_KEY,JSON.stringify({savedAt:data.updated_at||new Date().toISOString(),items:all}))}catch(e){}
+   st.textContent="अपडेट: "+new Date(data.updated_at||Date.now()).toLocaleString("mr-IN")+" • "+all.length+" बातम्या";
+   loaded=true;
+  }
+ }catch(err){}
+ if(!loaded){
+  try{
+   const results=await Promise.allSettled(feeds.map(getFeed));
+   const fresh=results.filter(x=>x.status==="fulfilled").flatMap(x=>x.value);
+   const unique=new Map();
+   fresh.forEach(x=>{if(x.title&&x.link&&!unique.has(x.link))unique.set(x.link,x)});
+   if(unique.size){
+    all=[...unique.values()].sort((a,b)=>(new Date(b.date||0).getTime()||0)-(new Date(a.date||0).getTime()||0));
+    saveCache();
+    st.textContent="ताज्या RSS फीडमधून "+all.length+" बातम्या • काही स्रोत उपलब्ध नसू शकतात.";
+    loaded=true;
+   }
+  }catch(err){}
+ }
+ if(!loaded){
+  const cachedAt=restoreCache();
+  if(all.length){
+   st.textContent="नवीन बातम्या सध्या उपलब्ध नाहीत. आधीच्या "+all.length+" बातम्या दाखवत आहोत"+(cachedAt?" • शेवटचे अपडेट: "+new Date(cachedAt).toLocaleString("mr-IN"):"")+".";
+  }else{
+   st.textContent="सध्या बातम्या आणता आल्या नाहीत. इंटरनेट तपासा किंवा काही वेळाने पुन्हा रिफ्रेश करा.";
+   box.innerHTML='<div class="empty">बातम्या सध्या उपलब्ध नाहीत. कृपया थोड्या वेळाने पुन्हा प्रयत्न करा.</div>';
   }
  }
+ render();
+ loading=false;
+ if(btn){btn.disabled=false;btn.textContent="↻ बातम्या रिफ्रेश करा"}
 }
-
 function render(){
  const q=document.getElementById("search").value.toLocaleLowerCase("mr");
- const combined=[...custom.map(x=>({...x,custom:true})),...all];
- const items=combined.filter(x=>(current==="सर्व"||x.cat===current)&&(!q||x.title.toLocaleLowerCase("mr").includes(q)));
+ const items=all.filter(x=>(current==="सर्व"||x.cat===current)&&(!q||x.title.toLocaleLowerCase("mr").includes(q)));
  const box=document.getElementById("newslist");
  if(!items.length){box.innerHTML='<div class="empty">या विभागात बातम्या उपलब्ध नाहीत. रिफ्रेश करून पाहा.</div>';return}
  box.innerHTML=items.map(x=>{
   const link=safeLink(x.link);
   const date=x.date&& !Number.isNaN(new Date(x.date).getTime())?new Date(x.date).toLocaleString("mr-IN"):"वेळ उपलब्ध नाही";
-  return '<article class="card"><div class="cat">'+esc(x.cat)+(x.custom?' • संपादकीय पोस्ट':'')+'</div><a href="'+(link||'#')+'" '+(link?'target="_blank" rel="noopener noreferrer"':'')+'><h3>'+esc(x.title)+'</h3></a>'+(x.desc?'<p class="muted">'+esc(x.desc.slice(0,260))+'</p>':'')+'<div class="meta">'+esc(x.source||"मूळ स्रोत")+" • "+esc(date)+'</div></article>';
+  return '<article class="card"><div class="cat">'+esc(x.cat)+'</div><a href="'+(link||'#')+'" '+(link?'target="_blank" rel="noopener noreferrer"':'')+'><h3>'+esc(x.title)+'</h3></a>'+(x.desc?'<p class="muted">'+esc(x.desc.slice(0,260))+'</p>':'')+'<div class="meta">'+esc(x.source||"मूळ स्रोत")+" • "+esc(date)+'</div></article>';
  }).join("");
 }
 document.getElementById("search").addEventListener("input",render);
-document.getElementById("postForm").addEventListener("submit",e=>{
- e.preventDefault();
- custom.unshift({cat:document.getElementById("postCat").value,title:document.getElementById("postTitle").value.trim(),desc:document.getElementById("postDesc").value.trim(),link:safeLink(document.getElementById("postUrl").value.trim()),date:new Date().toISOString(),source:"World News 24"});
- try{localStorage.setItem("wn24posts",JSON.stringify(custom))}catch(e){}
- e.target.reset();render();showAdmin();
-});
-function showAdmin(){
- const el=document.getElementById("adminList");
- el.innerHTML=custom.map((x,i)=>'<div class="adminitem"><span>'+esc(x.title)+'</span><button class="btn red" onclick="removePost('+i+')">हटवा</button></div>').join("");
-}
-function removePost(i){custom.splice(i,1);try{localStorage.setItem("wn24posts",JSON.stringify(custom))}catch(e){}render();showAdmin()}
-showAdmin();
 restoreCache();
 loadNews();
 // Automatic refresh while the page is open. A static GitHub Pages site does not run background jobs when nobody visits.
