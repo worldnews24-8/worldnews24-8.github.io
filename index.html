@@ -158,7 +158,7 @@ all=data.news.filter(x=>x&&x.title&&x.link).map(x=>({
  link:safeLink(x.link),
  date:x.pubDate||"",
  desc:"",
- source:"Google News"
+ source:clean(x.source||"Google News")
 }));
 if(all.length){
  try{
